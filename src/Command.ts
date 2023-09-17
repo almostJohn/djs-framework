@@ -2,7 +2,14 @@ import { basename, extname } from "node:path";
 import { logger } from "./logger.js";
 import type { CommandPayload, Runtime } from "./types/ArgumentsOf.js";
 import type { CommandInfo } from "./types/Command.js";
-import type { ArgsParam, InteractionParam, CommandMethod, Commands, InteractionType } from "./types/Interaction.js";
+import type {
+	ArgsParam,
+	InteractionParam,
+	LocaleParam,
+	CommandMethod,
+	Commands,
+	InteractionType,
+} from "./types/Interaction.js";
 
 export abstract class Command<C extends CommandPayload, R extends Runtime = Runtime.Discordjs>
 	implements Commands<C, R>
@@ -12,6 +19,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	public chatInput(
 		_interaction: InteractionParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
 		_args: ArgsParam<C, CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
+		_locale: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
@@ -23,6 +31,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	public autocomplete(
 		_interaction: InteractionParam<CommandMethod.Autocomplete, InteractionType.ApplicationCommand, R>,
 		_args: ArgsParam<C, CommandMethod.Autocomplete, InteractionType.ApplicationCommand, R>,
+		_locale: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
@@ -34,6 +43,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	public messageContext(
 		_interaction: InteractionParam<CommandMethod.MessageContext, InteractionType.ApplicationCommand, R>,
 		_args: ArgsParam<C, CommandMethod.MessageContext, InteractionType.ApplicationCommand, R>,
+		_locale: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
@@ -45,6 +55,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	public userContext(
 		_interaction: InteractionParam<CommandMethod.UserContext, InteractionType.ApplicationCommand, R>,
 		_args: ArgsParam<C, CommandMethod.UserContext, InteractionType.ApplicationCommand, R>,
+		_locale: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R>,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(

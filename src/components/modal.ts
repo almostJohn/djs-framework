@@ -4,13 +4,15 @@ import type {
 	APIActionRowComponent,
 } from "discord-api-types/v10";
 
-type ModalOptions = {
+export function createModal({
+	customId,
+	title,
+	components,
+}: {
 	components: APIActionRowComponent<APIModalActionRowComponent>[];
 	customId: string;
 	title: string;
-};
-
-export function createModal({ customId, title, components }: ModalOptions): APIModalInteractionResponseCallbackData {
+}): APIModalInteractionResponseCallbackData {
 	return {
 		custom_id: customId,
 		title,

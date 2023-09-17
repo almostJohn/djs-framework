@@ -1,16 +1,5 @@
 import { type APITextInputComponent, TextInputStyle, ComponentType } from "discord-api-types/v10";
 
-type TextComponentOptions = {
-	customId: string;
-	label: string;
-	maxLength?: number | undefined;
-	minLength?: number | undefined;
-	placeholder?: string | undefined;
-	required?: boolean | undefined;
-	style?: TextInputStyle | undefined;
-	value?: string | undefined;
-};
-
 export function createTextComponent({
 	customId,
 	label,
@@ -20,7 +9,16 @@ export function createTextComponent({
 	required,
 	style,
 	value,
-}: TextComponentOptions): APITextInputComponent {
+}: {
+	customId: string;
+	label: string;
+	maxLength?: number | undefined;
+	minLength?: number | undefined;
+	placeholder?: string | undefined;
+	required?: boolean | undefined;
+	style?: TextInputStyle | undefined;
+	value?: string | undefined;
+}): APITextInputComponent {
 	return {
 		type: ComponentType.TextInput,
 		custom_id: customId,
