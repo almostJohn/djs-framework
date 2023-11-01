@@ -17,7 +17,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	public button(
 		_interaction: InteractionParam<ComponentMethod.Button, InteractionType.Component, R>,
 		_args: ArgsParam<C, ComponentMethod.Button, InteractionType.Component, R>,
-		_locale: LocaleParam<ComponentMethod.Button, InteractionType.Component, R>,
+		_locale?: LocaleParam<ComponentMethod.Button, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(
@@ -29,7 +29,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	public selectMenu(
 		_interaction: InteractionParam<ComponentMethod.SelectMenu, InteractionType.Component, R>,
 		_args: ArgsParam<C, ComponentMethod.Button, InteractionType.Component, R>,
-		_locale: LocaleParam<ComponentMethod.SelectMenu, InteractionType.Component, R>,
+		_locale?: LocaleParam<ComponentMethod.SelectMenu, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(
@@ -41,7 +41,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	public modalSubmit(
 		_interaction: InteractionParam<ComponentMethod.ModalSubmit, InteractionType.Component, R>,
 		_args: ArgsParam<C, ComponentMethod.ModalSubmit, InteractionType.Component, R>,
-		_locale: LocaleParam<ComponentMethod.ModalSubmit, InteractionType.Component, R>,
+		_locale?: LocaleParam<ComponentMethod.ModalSubmit, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(

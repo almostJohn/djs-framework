@@ -24,7 +24,7 @@ export type ChatInput<C extends CommandPayload, R extends Runtime = Runtime.Disc
 			? ChatInputCommandInteraction<"cached">
 			: APIChatInputApplicationCommandInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -34,7 +34,7 @@ export type Autocomplete<C extends CommandPayload, R extends Runtime = Runtime.D
 			? AutocompleteInteraction<"cached">
 			: APIApplicationCommandAutocompleteInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -44,7 +44,7 @@ export type MessageContext<C extends CommandPayload, R extends Runtime = Runtime
 			? MessageContextMenuCommandInteraction<"cached">
 			: APIMessageApplicationCommandInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -54,7 +54,7 @@ export type UserContext<C extends CommandPayload, R extends Runtime = Runtime.Di
 			? UserContextMenuCommandInteraction<"cached">
 			: APIUserApplicationCommandInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -62,7 +62,7 @@ export type Button<C extends ComponentPayload, R extends Runtime = Runtime.Disco
 	button(
 		interaction: R extends Runtime.Discordjs ? ButtonInteraction<"cached"> : APIMessageComponentButtonInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -72,7 +72,7 @@ export type SelectMenu<C extends ComponentPayload, R extends Runtime = Runtime.D
 			? AnySelectMenuInteraction<"cached">
 			: APIMessageComponentSelectMenuInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 
@@ -80,7 +80,7 @@ export type ModalSubmit<C extends ComponentPayload, R extends Runtime = Runtime.
 	modalSubmit(
 		interaction: R extends Runtime.Discordjs ? ModalSubmitInteraction<"cached"> : APIModalSubmitInteraction,
 		args: ArgumentsOf<C, R>,
-		locale: string,
+		locale?: string | undefined,
 	): Promise<any> | any;
 };
 

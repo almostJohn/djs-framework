@@ -12,13 +12,13 @@ export const EMBED_FIELD_NAME_LIMIT = 256;
 export const EMBED_FIELD_VALUE_LIMIT = 1_024;
 
 export const Color = {
-	DiscordPrimary: 0x5865f2,
-	DiscordSuccess: 0x57f287,
-	DiscordDanger: 0xed4245,
-	DiscordWarning: 0xfee75c,
-	DiscordEmbedBackground: 0x2f3136,
-	DiscordGem: 0xeb459e,
-	DiscordBravery: 0x9c84ef,
-	DiscordBalance: 0x45ddc0,
-	DiscordBrilliance: 0xf47b67,
+	Blurple: 0x5865f2,
+	Green: 0x57f287,
+	Red: 0xed4245,
+	Yellow: 0xfee75c,
+	DarkButNotBlack: 0x2f3136,
+	Fuchsia: 0xeb459e,
+	Purple: 0x9c84ef,
+	Teal: 0x45ddc0,
+	Orange: 0xf47b67,
 } as const;
