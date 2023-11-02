@@ -1,11 +1,10 @@
-import process from "node:process";
 import { container } from "tsyringe";
 import { kSQL } from "./tokens.js";
 
 export async function createPostgres() {
 	const postgres = await import("postgres");
 
-	const sql = postgres.default(process.env.POSTGRES_URL!, {
+	const sql = postgres.default({
 		types: {
 			date: {
 				to: 1_184,
