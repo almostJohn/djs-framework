@@ -21,8 +21,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(
-			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
-			`Received button input for ${customId}, but the component does not handle button input`,
+			`Received button input for ${customId} executed by ${_interaction.user?.id}, but the component does not handle button input`,
 		);
 	}
 
@@ -33,8 +32,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(
-			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
-			`Received select menu input for ${customId}, but the component does not handle select menu input`,
+			`Received select menu input for ${customId} executed by ${_interaction.user?.id}, but the component does not handle select menu input`,
 		);
 	}
 
@@ -45,8 +43,7 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
 		logger.info(
-			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
-			`Received modal submit for ${customId}, but the component does not handle modal submit`,
+			`Received modal submit for ${customId} executed by ${_interaction.user?.id}, but the component does not handle modal submit`,
 		);
 	}
 }

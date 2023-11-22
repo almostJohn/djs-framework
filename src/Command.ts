@@ -23,8 +23,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
-			{ command: { name: commandName, type: _interaction.type }, userId: _interaction.user!.id },
-			`Received chat input for ${commandName}, but the command does not handle chat input`,
+			`Received chat input for ${commandName} executed by ${_interaction.user?.id}, but the command does not handle chat input`,
 		);
 	}
 
@@ -35,8 +34,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
-			{ command: { name: commandName, type: _interaction.type }, userId: _interaction.user!.id },
-			`Received autocomplete for ${commandName}, but the command does not handle autocomplete`,
+			`Received autocomplete for ${commandName} executed by ${_interaction.user?.id}, but the command does not handle autocomplete`,
 		);
 	}
 
@@ -47,8 +45,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
-			{ command: { name: commandName, type: _interaction.type }, userId: _interaction.user!.id },
-			`Received message context for ${commandName}, but the command does not handle message context`,
+			`Received message context for ${commandName} executed by ${_interaction.user?.id}, but the command does not handle message context`,
 		);
 	}
 
@@ -59,8 +56,7 @@ export abstract class Command<C extends CommandPayload, R extends Runtime = Runt
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
 		logger.info(
-			{ command: { name: commandName, type: _interaction.type }, userId: _interaction.user?.id },
-			`Received user context for ${commandName}, but the command does not handle user context`,
+			`Received user context for ${commandName} executed by ${_interaction.user?.id}, but the command does not handle user context`,
 		);
 	}
 }
