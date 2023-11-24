@@ -14,7 +14,7 @@ export const logger = {
 	info(...args: unknown[]) {
 		console.log(chalk.cyan(...args));
 	},
-	success(args: unknown[]) {
+	success(...args: unknown[]) {
 		console.log(chalk.green(...args));
 	},
 };
