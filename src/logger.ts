@@ -3,8 +3,6 @@ import { pino } from "pino";
 import chalk from "chalk";
 
 type LoggerOptions = {
-	event?: { name: string; event: string };
-	command?: { name: string };
 	[key: string]: any;
 };
 
