@@ -2,19 +2,25 @@ import process from "node:process";
 import { pino } from "pino";
 import chalk from "chalk";
 
+type LoggerOptions = {
+	event?: { name: string; event: string };
+	command?: { name: string };
+	[key: string]: any;
+};
+
 export const pinoLogger = pino({ name: process.env.LOGGER_NAME! });
 
 export const logger = {
-	error(...args: unknown[]) {
-		console.log(chalk.red(...args));
+	error(options: LoggerOptions, ...args: unknown[]) {
+		console.log(chalk.red(...args), options);
 	},
-	warn(...args: unknown[]) {
-		console.log(chalk.yellow(...args));
+	warn(options: LoggerOptions, ...args: unknown[]) {
+		console.log(chalk.yellow(...args), options);
 	},
-	info(...args: unknown[]) {
-		console.log(chalk.cyan(...args));
+	info(options: LoggerOptions, ...args: unknown[]) {
+		console.log(chalk.cyan(...args), options);
 	},
-	success(...args: unknown[]) {
-		console.log(chalk.green(...args));
+	success(options: LoggerOptions, ...args: unknown[]) {
+		console.log(chalk.green(...args), options);
 	},
 };
