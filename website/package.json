@@ -10,9 +10,12 @@
 	},
 	"dependencies": {
 		"@icons-pack/react-simple-icons": "^9.1.0",
+		"class-variance-authority": "^0.7.0",
 		"clipboard-copy": "^4.0.1",
+		"jotai": "^2.6.0",
 		"lucide-react": "^0.293.0",
 		"next": "14.0.3",
+		"next-themes": "^0.2.1",
 		"react": "^18",
 		"react-dom": "^18"
 	},

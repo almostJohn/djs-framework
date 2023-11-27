@@ -8,15 +8,25 @@ const config: Config = {
 	],
 	theme: {
 		extend: {
-			backgroundImage: {
-				"gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-				"gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-			},
 			backgroundColor: {
 				blurple: "#5865f2",
+				light: "#f5f5f5",
+				dark: "#171717",
 			},
 			textColor: {
 				blurple: "#5865f2",
+				light: "#f5f5f5",
+				dark: "#171717",
+			},
+			ringColor: {
+				blurple: "#5865f2",
+				light: "#f5f5f5",
+				dark: "#171717",
+			},
+			borderColor: {
+				blurple: "#5865f2",
+				light: "#f5f5f5",
+				dark: "#171717",
 			},
 		},
 	},

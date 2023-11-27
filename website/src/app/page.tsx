@@ -1,5 +1,5 @@
 import { ArrowUpRight } from "lucide-react";
-import { ButtonCopy } from "@/components/ui/ButtonCopy";
+import { InstallButton } from "@/components/ui/InstallButton";
 
 export default function Page() {
 	return (
@@ -11,14 +11,22 @@ export default function Page() {
 							The <span className="relative rounded bg-blurple px-3 py-1 text-white">next generation</span> tool to
 							build Discord bots.
 						</h1>
-						<p className="py-6 leading-normal text-neutral-300">
+						<p className="py-6 leading-normal text-neutral-800 dark:text-neutral-200">
 							djs-framework is a Framework built on top of discord.js Library, a powerful Node.js module that allows you
 							to interact with the Discord API very easily. It takes a much more object-oriented approach than most
 							other JS Discord libraries, making your bot&apos;s code significantly tidier and easier to comprehend.
 						</p>
 						<div className="flex flex-wrap place-content-center gap-4 md:flex-row">
 							<a
-								className="btn btn-outline"
+								className="btn font-semibold rounded bg-light dark:bg-dark border-light dark:border-gray-600 hover:bg-light hover:border-dark dark:hover:bg-dark dark:hover:border-light text-dark dark:text-light"
+								href="https://www.npmjs.com/package/@almostjohn/djs-framework"
+								rel="external noopener noreferrer"
+								target="_blank"
+							>
+								NPM <ArrowUpRight />
+							</a>
+							<a
+								className="btn font-semibold rounded bg-light dark:bg-dark border-light dark:border-gray-600 hover:bg-light hover:border-dark dark:hover:bg-dark dark:hover:border-light text-dark dark:text-light"
 								href="https://github.com/almostJohn/djs-framework"
 								rel="external noopener noreferrer"
 								target="_blank"
@@ -26,7 +34,7 @@ export default function Page() {
 								GitHub <ArrowUpRight />
 							</a>
 						</div>
-						<ButtonCopy />
+						<InstallButton />
 					</div>
 				</div>
 			</div>
