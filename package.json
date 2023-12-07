@@ -1,6 +1,6 @@
 {
 	"name": "@almostjohn/djs-framework",
-	"version": "2.3.4",
+	"version": "2.3.5",
 	"description": "> .",
 	"scripts": {
 		"clean:build": "del-cli dist",
