@@ -47,6 +47,7 @@ web_modules/
 
 # Website
 website/
+website*
 
 # TypeScript cache
 *.tsbuildinfo
