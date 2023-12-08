@@ -20,10 +20,13 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.Button, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.info(`Received button input for ${customId}, but the component does not handle button input`, {
-			component: { name: customId, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				component: { name: customId, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received button input for ${customId}, but the component does not handle button input`,
+		);
 	}
 
 	public selectMenu(
@@ -32,10 +35,13 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.SelectMenu, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.info(`Received select menu input for ${customId}, but the component does not handle select menu input`, {
-			component: { name: customId, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				component: { name: customId, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received select menu input for ${customId}, but the component does not handle select menu input`,
+		);
 	}
 
 	public modalSubmit(
@@ -44,9 +50,12 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.ModalSubmit, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.info(`Received modal submit for ${customId}, but the component does not handle modal submit`, {
-			component: { name: customId, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				component: { name: customId, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received modal submit for ${customId}, but the component does not handle modal submit`,
+		);
 	}
 }

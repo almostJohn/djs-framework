@@ -22,10 +22,13 @@ export abstract class Command<C extends CommandPayload = CommandPayload, R exten
 		_locale?: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R> | undefined,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
-		logger.info(`Received chat input for ${commandName}, but the command does not handle chat input`, {
-			command: { name: commandName, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				command: { name: commandName, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received chat input for ${commandName}, but the command does not handle chat input`,
+		);
 	}
 
 	public autocomplete(
@@ -34,10 +37,13 @@ export abstract class Command<C extends CommandPayload = CommandPayload, R exten
 		_locale?: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R> | undefined,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
-		logger.info(`Received autocomplete for ${commandName}, but the command does not handle autocomplete`, {
-			command: { name: commandName, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				command: { name: commandName, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received autocomplete for ${commandName}, but the command does not handle autocomplete`,
+		);
 	}
 
 	public messageContext(
@@ -46,10 +52,13 @@ export abstract class Command<C extends CommandPayload = CommandPayload, R exten
 		_locale?: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R> | undefined,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
-		logger.info(`Received message context for ${commandName}, but the command does not handle message context`, {
-			command: { name: commandName, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				command: { name: commandName, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received message context for ${commandName}, but the command does not handle message context`,
+		);
 	}
 
 	public userContext(
@@ -58,10 +67,13 @@ export abstract class Command<C extends CommandPayload = CommandPayload, R exten
 		_locale?: LocaleParam<CommandMethod.ChatInput, InteractionType.ApplicationCommand, R> | undefined,
 	): Promise<any> | any {
 		const commandName = "commandName" in _interaction ? _interaction.commandName : _interaction.data.name;
-		logger.info(`Received user context for ${commandName}, but the command does not handle user context`, {
-			command: { name: commandName, type: _interaction.type },
-			userId: _interaction.user?.id,
-		});
+		logger.info(
+			{
+				command: { name: commandName, type: _interaction.type },
+				userId: _interaction.user?.id,
+			},
+			`Received user context for ${commandName}, but the command does not handle user context`,
+		);
 	}
 }
 
