@@ -1,3 +1,3 @@
-export function dynamicImport<T, R = () => Promise<{ default: T }>>(factory: () => Promise<any>) {
+export function dynamicImport<T, R = () => Promise<{ default: T }>>(factory: () => Promise<unknown>) {
 	return factory as unknown as R;
 }
