@@ -1,5 +1,4 @@
-import chalk from "chalk";
-import { logger } from "./logger.js";
+import { pinoLogger as logger } from "./logger.js";
 import type { ComponentPayload, Runtime } from "./types/ArgumentsOf.js";
 import type {
 	ArgsParam,
@@ -9,9 +8,6 @@ import type {
 	InteractionType,
 	LocaleParam,
 } from "./types/Interaction.js";
-import { ERRORMARK } from "./constants.js";
-
-const { red } = chalk;
 
 export abstract class Component<C extends ComponentPayload = ComponentPayload, R extends Runtime = Runtime.Discordjs>
 	implements Components<C, R>
@@ -24,8 +20,9 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.Button, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.warn(
-			`${red(ERRORMARK)} Received button input for ${customId}, but the component does not handle button input`,
+		logger.info(
+			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
+			`Received button input for ${customId}, but the component does not handle button input`,
 		);
 	}
 
@@ -35,10 +32,9 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.SelectMenu, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.warn(
-			`${red(
-				ERRORMARK,
-			)} Received select menu input for ${customId}, but the component does not handle select menu input`,
+		logger.info(
+			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
+			`Received select menu input for ${customId}, but the component does not handle select menu input`,
 		);
 	}
 
@@ -48,8 +44,9 @@ export abstract class Component<C extends ComponentPayload = ComponentPayload, R
 		_locale?: LocaleParam<ComponentMethod.ModalSubmit, InteractionType.Component, R> | undefined,
 	): Promise<any> | any {
 		const customId = "customId" in _interaction ? _interaction.customId : _interaction.data.custom_id;
-		logger.warn(
-			`${red(ERRORMARK)} Received modal submit for ${customId}, but the component does not handle modal submit`,
+		logger.info(
+			{ component: { customId, type: _interaction.type }, userId: _interaction.user?.id },
+			`Received modal submit input for ${customId}, but the component does not handle modal submit input`,
 		);
 	}
 }
