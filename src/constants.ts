@@ -1,8 +1,5 @@
 export const SNOWFLAKE_MIN_LENGTH = 17;
 
-export const CHECKMARK = "✓" as const;
-export const ERRORMARK = "✗" as const;
-
 export const AUTOCOMPLETE_CHOICE_LIMIT = 25;
 export const AUTOCOMPLETE_CHOICE_NAME_LENGTH_LIMIT = 100;
 
