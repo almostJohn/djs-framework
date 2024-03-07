@@ -23,7 +23,7 @@ export default function Page() {
 								className={cn(
 									"inline-flex rounded-md border border-transparent bg-blurple px-6 py-2 font-medium text-neutral-50",
 								)}
-								href="https://github.com/almostJohn/djs-framework/blob/main/README.md"
+								href="https://github.com/almostJohn/djs-framework/blob/main/website/README.md"
 								rel="noreferrer"
 								target="_blank"
 							>
