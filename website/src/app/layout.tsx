@@ -8,8 +8,8 @@ import "../styles/globals.css";
 
 export const viewport = {
 	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
-		{ media: "(prefers-color-scheme: dark)", color: "#171717" },
+		{ media: "(prefers-color-scheme: light)", color: "white" },
+		{ media: "(prefers-color-scheme: dark)", color: "dark" },
 	],
 	colorScheme: "light dark",
 } satisfies Viewport;
@@ -17,7 +17,7 @@ export const viewport = {
 export const metadata = {
 	title: {
 		default: "djs-framework",
-		template: "% | djs-framework",
+		template: "%s - djs-framework",
 	},
 	icons: {
 		other: [
@@ -33,15 +33,12 @@ export const metadata = {
 			},
 		],
 	},
-	other: {
-		"msapplication-TileColor": "#171717",
-	},
 } satisfies Metadata;
 
 export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html className={`${inter.variable} ${jetBrainsMono.variable}`} lang="en" suppressHydrationWarning>
-			<body className="antialiased bg-light dark:bg-dark dark:text-white">
+			<body className="antialiased bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50">
 				<Providers>{children}</Providers>
 			</body>
 		</html>
