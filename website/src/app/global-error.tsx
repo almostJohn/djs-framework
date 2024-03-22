@@ -1,7 +1,7 @@
 "use client";
 
 import type { Metadata, Viewport } from "next";
-import { inter } from "@/util/fonts";
+import { inter } from "~/util/fonts";
 import { Providers } from "./providers";
 
 import "../styles/custom.css";

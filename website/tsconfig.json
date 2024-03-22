@@ -53,7 +53,7 @@
 			}
 		],
 		"paths": {
-			"@/*": ["./src/*"]
+			"~/*": ["./src/*"]
 		}
 	},
 	"include": ["src/**/*.ts", "src/**/*.tsx", "next-env.d.ts", ".next/types/**/*.ts"],

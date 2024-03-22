@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import type { PropsWithChildren } from "react";
-import { inter, jetBrainsMono } from "@/util/fonts";
+import { inter, jetBrainsMono } from "~/util/fonts";
 import { Providers } from "./providers";
 
 import "../styles/custom.css";

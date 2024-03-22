@@ -4,7 +4,7 @@ import * as React from "react";
 import { useState } from "react";
 import { Copy, Check } from "lucide-react";
 import copy from "clipboard-copy";
-import { cn } from "@/util/cn";
+import { cn } from "~/util/cn";
 
 export function InstallButton() {
 	const [interacted, setInteracted] = useState<boolean>(false);
