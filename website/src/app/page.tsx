@@ -5,13 +5,15 @@ import { cn } from "~/util/cn";
 import { PageActions, PageHeader, PageHeaderDescription, PageHeaderHeading } from "~/components/page-header";
 import Link from "next/link";
 import { buttonVariants } from "~/components/ui/button";
+import { Announcement } from "~/components/announcement";
 
 export default function Page() {
 	return (
 		<div className="min-h-screen flex flex-col container max-w-7xl mx-auto p-4">
 			<PageHeader>
+				<Announcement />
 				<PageHeaderHeading>
-					The <span className="text-blurple">next generation</span> tool to build Discord bots.
+					D<span className="text-yellow-500">JS</span> Framework
 				</PageHeaderHeading>
 				<PageHeaderDescription>
 					djs-framework is a Framework built on top of discord.js Library, a powerful Node.js module that allows you to

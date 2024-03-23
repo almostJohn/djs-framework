@@ -10,7 +10,7 @@ export function InstallButton() {
 	const [interacted, setInteracted] = useState<boolean>(false);
 
 	const handleClickCopy = () => {
-		copy("npm install @almostjohn/djs-framework");
+		copy("npm install @almostjohn/djs-framework discord.js");
 		setInteracted(true);
 		setTimeout(() => setInteracted(false), 2_000);
 	};
@@ -23,7 +23,7 @@ export function InstallButton() {
 			onClick={handleClickCopy}
 			type="button"
 		>
-			<span className="font-semibold text-blurple">{">"}</span> npm install @almostjohn/djs-framework{" "}
+			<span className="font-semibold text-blurple">{">"}</span> npm install @almostjohn/djs-framework discord.js{" "}
 			{interacted ? (
 				<Check className="ml-1 inline-block h-4 w-4 text-green-500" />
 			) : (
