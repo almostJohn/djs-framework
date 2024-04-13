@@ -1,24 +1,15 @@
 import * as React from "react";
 import type { Metadata, Viewport } from "next";
-import { inter, jetBrainsMono } from "~/util/fonts";
+import { inter, jetBrainsMono, fontSans } from "~/util/fonts";
 import { Providers } from "./providers";
+import { cn } from "~/lib/utils";
+import { siteConfig } from "~/config/site";
 
-import "../styles/custom.css";
+import "../styles/default-styles.css";
 import "../styles/globals.css";
 
-export const viewport = {
-	themeColor: [
-		{ media: "(prefers-color-scheme: light)", color: "white" },
-		{ media: "(prefers-color-scheme: dark)", color: "dark" },
-	],
-	colorScheme: "light dark",
-} satisfies Viewport;
-
-export const metadata = {
-	title: {
-		default: "djs-framework",
-		template: "%s - djs-framework",
-	},
+export const metadata: Metadata = {
+	title: siteConfig.title,
 	icons: {
 		other: [
 			{
@@ -33,12 +24,26 @@ export const metadata = {
 			},
 		],
 	},
-} satisfies Metadata;
+};
+
+export const viewport: Viewport = {
+	themeColor: [
+		{ media: "(prefers-color-scheme: light)", color: "light" },
+		{ media: "(prefers-color-scheme: dark)", color: "dark" },
+	],
+};
 
 export default function RootLayout({ children }: { readonly children: React.ReactNode }) {
 	return (
-		<html className={`${inter.variable} ${jetBrainsMono.variable}`} lang="en" suppressHydrationWarning>
-			<body className="antialiased bg-neutral-50 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-50">
+		<html lang="en" suppressHydrationWarning>
+			<body
+				className={cn(
+					"min-h-screen bg-background antialiased",
+					fontSans.variable,
+					inter.variable,
+					jetBrainsMono.variable,
+				)}
+			>
 				<Providers>{children}</Providers>
 			</body>
 		</html>

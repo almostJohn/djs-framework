@@ -1,10 +1,10 @@
 "use client";
 
+import * as React from "react";
 import { Provider } from "jotai";
 import { ThemeProvider } from "next-themes";
-import type { PropsWithChildren } from "react";
 
-export function Providers({ children }: PropsWithChildren) {
+export function Providers({ children }: { readonly children: React.ReactNode }) {
 	return (
 		<ThemeProvider attribute="class">
 			<Provider>{children}</Provider>
