@@ -1,13 +1,10 @@
 import * as React from "react";
-import { PageHeader, PageHeaderHeading, PageHeaderDescription } from "~/components/page-header";
 
 export default function NotFound() {
 	return (
-		<div className="mx-auto flex min-h-screen flex-col items-center justify-center">
-			<PageHeader>
-				<PageHeaderHeading>404</PageHeaderHeading>
-				<PageHeaderDescription>Page not Found.</PageHeaderDescription>
-			</PageHeader>
+		<div className="flex flex-1 flex-col items-center justify-center space-y-2 py-12 md:py-24 lg:py-32">
+			<h1 className="text-[6rem] font-bold leading-none tracking-tight md:text-[12rem] lg:[16rem]">404</h1>
+			<p className="text-center text-muted-foreground text-[3rem]">Page not found.</p>
 		</div>
 	);
 }

@@ -4,11 +4,9 @@ import type { Metadata, Viewport } from "next";
 import { inter, fontSans, jetBrainsMono } from "~/util/fonts";
 import { Providers } from "./providers";
 import { siteConfig } from "~/config/site";
-import { PageHeader, PageHeaderHeading, PageHeaderDescription } from "~/components/page-header";
-
-import "../styles/default-styles.css";
-import "../styles/globals.css";
 import { cn } from "~/lib/utils";
+
+import "../styles/globals.css";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
@@ -35,11 +33,9 @@ export default function GlobalError({ error }: { readonly error: Error }) {
 				)}
 			>
 				<Providers>
-					<div className="mx-auto flex min-h-screen flex-col items-center justify-center">
-						<PageHeader>
-							<PageHeaderHeading>500</PageHeaderHeading>
-							<PageHeaderDescription>Page Error.</PageHeaderDescription>
-						</PageHeader>
+					<div className="flex flex-1 flex-col items-center justify-center space-y-2 py-12 md:py-24 lg:py-32">
+						<h1 className="text-[6rem] font-bold leading-none tracking-tight md:text-[12rem] lg:[16rem]">500</h1>
+						<p className="text-center text-muted-foreground text-[3rem]">Page error.</p>
 					</div>
 				</Providers>
 			</body>

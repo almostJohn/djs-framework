@@ -4,8 +4,8 @@ import { inter, jetBrainsMono, fontSans } from "~/util/fonts";
 import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
+import { SiteHeader } from "~/components/site-header";
 
-import "../styles/default-styles.css";
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
@@ -38,13 +38,18 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"min-h-screen bg-background antialiased",
+					"bg-background text-foreground antialiased",
 					fontSans.variable,
 					inter.variable,
 					jetBrainsMono.variable,
 				)}
 			>
-				<Providers>{children}</Providers>
+				<Providers>
+					<div className="min-h-screen flex flex-col">
+						<SiteHeader />
+						{children}
+					</div>
+				</Providers>
 			</body>
 		</html>
 	);
