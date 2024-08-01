@@ -3,44 +3,28 @@ import { cn } from "~/lib/utils";
 
 export function PageHeader({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
 	return (
-		<section className={cn("flex flex-col items-center justify-center py-12 md:py-24 lg:py-24", className)} {...props}>
+		<section
+			className={cn("mx-auto flex flex-col items-start gap-2 px-4 py-8 md:py-12 md:pb-8 lg:py-12 lg:pb-10", className)}
+			{...props}
+		>
 			{children}
 		</section>
-	);
-}
-
-export function PageHeaderContainer({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-	return (
-		<div className={cn("container space-y-6 text-center", className)} {...props}>
-			{children}
-		</div>
-	);
-}
-
-export function PageHeaderBody({ className, children, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-	return (
-		<div className={cn("space-y-4", className)} {...props}>
-			{children}
-		</div>
 	);
 }
 
 export function PageHeaderHeading({ className, ...props }: React.HTMLAttributes<HTMLHeadingElement>) {
 	return (
 		<h1
-			className={cn(
-				"text-4xl font-bold leading-tight tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl lg:leading-[1.1]",
-				className,
-			)}
+			className={cn("text-3xl font-bold leading-tight tracking-tighter md:text-4xl lg:leading-[1.1]", className)}
 			{...props}
 		/>
 	);
 }
 
 export function PageHeaderDescription({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-	return <p className={cn("mx-auto max-w-[700px] font-light text-foreground md:text-xl", className)} {...props} />;
+	return <p className={cn("text-balance max-w-2xl text-lg font-light text-foreground", className)} {...props} />;
 }
 
 export function PageActions({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
-	return <div className={cn("flex w-full items-center justify-center py-2 gap-2", className)} {...props} />;
+	return <div className={cn("flex w-full items-center justify-start py-2 gap-2", className)} {...props} />;
 }

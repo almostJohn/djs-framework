@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
 import { SiteHeader } from "~/components/site-header";
+import { SiteFooter } from "~/components/site-footer";
 
 import "../styles/globals.css";
 
@@ -45,9 +46,10 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 				)}
 			>
 				<Providers>
-					<div className="min-h-screen flex flex-col">
+					<div className="relative min-h-screen flex flex-col">
 						<SiteHeader />
 						{children}
+						<SiteFooter />
 					</div>
 				</Providers>
 			</body>
