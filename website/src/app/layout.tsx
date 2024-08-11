@@ -4,8 +4,7 @@ import { inter, jetBrainsMono, fontSans } from "~/util/fonts";
 import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
-import { SiteHeader } from "~/components/site-header";
-import { SiteFooter } from "~/components/site-footer";
+import { Navbar } from "~/components/Navbar";
 
 import "../styles/globals.css";
 
@@ -39,7 +38,7 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"bg-background text-foreground antialiased",
+					"bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 antialiased",
 					fontSans.variable,
 					inter.variable,
 					jetBrainsMono.variable,
@@ -47,9 +46,8 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 			>
 				<Providers>
 					<div className="relative min-h-screen flex flex-col">
-						<SiteHeader />
+						<Navbar />
 						{children}
-						<SiteFooter />
 					</div>
 				</Providers>
 			</body>

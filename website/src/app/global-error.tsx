@@ -26,7 +26,7 @@ export default function GlobalError({ error }: { readonly error: Error }) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"min-h-screen bg-background antialiased",
+					"bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 antialiased",
 					fontSans.variable,
 					inter.variable,
 					jetBrainsMono.variable,
@@ -35,7 +35,7 @@ export default function GlobalError({ error }: { readonly error: Error }) {
 				<Providers>
 					<div className="flex flex-1 flex-col items-center justify-center space-y-2 py-12 md:py-24 lg:py-32">
 						<h1 className="text-[6rem] font-bold leading-none tracking-tight md:text-[12rem] lg:[16rem]">500</h1>
-						<p className="text-center text-muted-foreground text-[3rem]">Page error.</p>
+						<p className="text-center text-neutral-500 text-[3rem]">Error</p>
 					</div>
 				</Providers>
 			</body>
