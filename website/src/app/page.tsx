@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Announcement } from "~/components/announcement";
+import { Announcement } from "~/components/Announcement";
 import { InstallButton } from "~/components/InstallButton";
 import {
 	PageHeader,
@@ -11,7 +11,7 @@ import {
 
 export default function IndexPage() {
 	return (
-		<main className="container relative">
+		<main className="relative">
 			<PageHeader>
 				<PageHeaderContainer>
 					<PageHeaderBody>

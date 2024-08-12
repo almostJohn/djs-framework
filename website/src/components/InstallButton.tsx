@@ -20,7 +20,7 @@ export function InstallButton() {
 		<div className="flex items-center justify-center place-content-center w-full">
 			<button
 				className={cn(
-					buttonVariants({ variant: "outline", className: "cursor-copy h-24 md:h-12" }),
+					buttonVariants({ variant: "outline", className: "cursor-copy h-[5rem] sm:h-14 md:h-14 lg:h-14" }),
 					jetBrainsMono.className,
 					"whitespace-normal w-auto max-w-full sm:max-w-md",
 				)}

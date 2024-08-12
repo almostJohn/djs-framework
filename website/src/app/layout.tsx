@@ -5,6 +5,7 @@ import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
 import { Navbar } from "~/components/Navbar";
+import { Footer } from "~/components/Footer";
 
 import "../styles/globals.css";
 
@@ -48,6 +49,7 @@ export default function RootLayout({ children }: { readonly children: React.Reac
 					<div className="relative min-h-screen flex flex-col">
 						<Navbar />
 						{children}
+						<Footer />
 					</div>
 				</Providers>
 			</body>
