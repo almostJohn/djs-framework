@@ -4,11 +4,14 @@ import { inter, jetBrainsMono, fontSans } from "~/lib/fonts";
 import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
+import { Navbar } from "~/components/Navbar";
+import { Footer } from "~/components/Footer";
 
 import "../styles/globals.css";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
+	description: siteConfig.description,
 	icons: {
 		other: [
 			{
@@ -44,7 +47,11 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
 				)}
 			>
 				<Providers>
-					<div className="relative min-h-screen flex flex-col">{children}</div>
+					<div className="relative min-h-screen flex flex-col">
+						<Navbar />
+						{children}
+						<Footer />
+					</div>
 				</Providers>
 			</body>
 		</html>
