@@ -1,7 +1,7 @@
 "use client";
 
 import type { Metadata, Viewport } from "next";
-import { inter, fontSans, jetBrainsMono } from "~/util/fonts";
+import { inter, fontSans, jetBrainsMono } from "~/lib/fonts";
 import { Providers } from "./providers";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";

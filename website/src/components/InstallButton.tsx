@@ -4,7 +4,7 @@ import * as React from "react";
 import { Copy, CopyCheck } from "lucide-react";
 import copy from "clipboard-copy";
 import { cn } from "~/lib/utils";
-import { jetBrainsMono } from "~/util/fonts";
+import { jetBrainsMono } from "~/lib/fonts";
 import { buttonVariants } from "~/styles/button";
 
 export function InstallButton() {

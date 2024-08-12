@@ -1,6 +1,6 @@
 import * as React from "react";
 import type { Metadata, Viewport } from "next";
-import { inter, jetBrainsMono, fontSans } from "~/util/fonts";
+import { inter, jetBrainsMono, fontSans } from "~/lib/fonts";
 import { Providers } from "./providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
