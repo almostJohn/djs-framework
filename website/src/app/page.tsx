@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Announcement } from "~/components/Announcement";
+import { Announcements } from "~/components/Announcements";
 import { InstallButton } from "~/components/InstallButton";
 import {
 	PageHeader,
@@ -15,7 +15,7 @@ export default function IndexPage() {
 			<PageHeader>
 				<PageHeaderContainer>
 					<PageHeaderBody>
-						<Announcement />
+						<Announcements />
 						<PageHeaderTitle>
 							Build Your Own <span className="text-[#5865f2]">Discord Bot</span>
 						</PageHeaderTitle>
