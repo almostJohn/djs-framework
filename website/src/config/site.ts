@@ -1,7 +1,7 @@
 export const siteConfig = {
 	title: {
 		default: "djs-framework",
-		template: "%s | djs-framework",
+		template: "djs-framework — %s",
 	},
 	name: "djs-framework",
 	description: "a framework for building discord bot the fastest way.",

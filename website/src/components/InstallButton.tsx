@@ -1,14 +1,14 @@
 "use client";
 
-import * as React from "react";
+import { useState } from "react";
 import { Copy, CopyCheck } from "lucide-react";
 import copy from "clipboard-copy";
 import { cn } from "~/lib/utils";
 import { jetBrainsMono } from "~/lib/fonts";
-import { buttonVariants } from "~/styles/button";
+import { buttonVariants } from "~/components/ui/button";
 
 export function InstallButton() {
-	const [interacted, setInteracted] = React.useState(false);
+	const [interacted, setInteracted] = useState(false);
 
 	const copyScript = () => {
 		copy("npm install discord.js @almostjohn/djs-framework");

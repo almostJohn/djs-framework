@@ -38,5 +38,5 @@ export function PageHeaderTitle({ className, ...props }: React.HTMLAttributes<HT
 }
 
 export function PageHeaderDescription({ className, ...props }: React.HTMLAttributes<HTMLParagraphElement>) {
-	return <p className={cn("mx-auto max-w-[700px] text-neutral-500 md:text-xl", className)} {...props} />;
+	return <p className={cn("mx-auto max-w-[700px] text-muted-foreground md:text-xl", className)} {...props} />;
 }

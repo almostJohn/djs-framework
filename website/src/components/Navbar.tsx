@@ -1,14 +1,13 @@
-import * as React from "react";
 import Link from "next/link";
 import { SiGithub as GitHub } from "@icons-pack/react-simple-icons";
 import { ModeToggle } from "~/components/ModeToggle";
-import { buttonVariants } from "~/styles/button";
+import { buttonVariants } from "~/components/ui/button";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 
 export function Navbar() {
 	return (
-		<header className="sticky top-0 z-50 w-full bg-neutral-100/95 backdrop-blur supports-[backdrop-filter]:bg-neutral-100/60 dark:bg-neutral-900/95 dark:backdrop-blur dark:supports-[backdrop-filter]:bg-neutral-900/60">
+		<header className="sticky top-0 z-50 w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
 			<div className="flex container max-w-7xl h-20 items-center justify-between">
 				<div className="flex items-center">
 					<Link href="/" className="text-xl font-bold tracking-tight">

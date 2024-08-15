@@ -1,8 +1,7 @@
-import * as React from "react";
 import { SiVercel as Vercel, SiGithub as GitHub, SiNpm as NPM } from "@icons-pack/react-simple-icons";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
-import { buttonVariants } from "~/styles/button";
+import { buttonVariants } from "~/components/ui/button";
 
 export function Footer() {
 	return (
@@ -10,7 +9,7 @@ export function Footer() {
 			<div className="flex justify-center gap-4">
 				<a
 					href={siteConfig.links.npm}
-					className={cn(buttonVariants({ variant: "destructive" }))}
+					className={cn(buttonVariants({ className: "bg-red-600 text-destructive-foreground hover:bg-red-600/90" }))}
 					rel="noreferrer"
 					target="_blank"
 				>

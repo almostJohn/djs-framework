@@ -1,13 +1,13 @@
-import * as React from "react";
+import type { PropsWithChildren } from "react";
 import type { Metadata, Viewport } from "next";
 import { inter, jetBrainsMono, fontSans } from "~/lib/fonts";
-import { Providers } from "./providers";
+import { Providers } from "~/app/providers";
 import { cn } from "~/lib/utils";
 import { siteConfig } from "~/config/site";
 import { Navbar } from "~/components/Navbar";
 import { Footer } from "~/components/Footer";
 
-import "../styles/globals.css";
+import "~/styles/globals.css";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
@@ -35,23 +35,23 @@ export const viewport: Viewport = {
 	],
 };
 
-export default function RootLayout({ children }: React.PropsWithChildren) {
+export default function RootLayout({ children }: PropsWithChildren) {
 	return (
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 antialiased",
+					"min-h-screen bg-background text-foreground antialiased",
 					fontSans.variable,
 					inter.variable,
 					jetBrainsMono.variable,
 				)}
 			>
 				<Providers>
-					<div className="relative min-h-screen flex flex-col">
+					<section className="relative flex flex-col">
 						<Navbar />
 						{children}
 						<Footer />
-					</div>
+					</section>
 				</Providers>
 			</body>
 		</html>

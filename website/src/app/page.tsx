@@ -1,4 +1,3 @@
-import * as React from "react";
 import { Announcements } from "~/components/Announcements";
 import { InstallButton } from "~/components/InstallButton";
 import {

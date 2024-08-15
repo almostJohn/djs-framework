@@ -2,14 +2,15 @@
 
 import type { Metadata, Viewport } from "next";
 import { inter, fontSans, jetBrainsMono } from "~/lib/fonts";
-import { Providers } from "./providers";
+import { Providers } from "~/app/providers";
 import { siteConfig } from "~/config/site";
 import { cn } from "~/lib/utils";
 
-import "../styles/globals.css";
+import "~/styles/globals.css";
 
 export const metadata: Metadata = {
 	title: siteConfig.title,
+	description: siteConfig.description,
 };
 
 export const viewport: Viewport = {
@@ -26,7 +27,7 @@ export default function GlobalError({ error }: { readonly error: Error }) {
 		<html lang="en" suppressHydrationWarning>
 			<body
 				className={cn(
-					"bg-neutral-100 text-neutral-900 dark:bg-neutral-900 dark:text-neutral-100 antialiased",
+					"bg-background text-foreground antialiased",
 					fontSans.variable,
 					inter.variable,
 					jetBrainsMono.variable,
@@ -35,7 +36,7 @@ export default function GlobalError({ error }: { readonly error: Error }) {
 				<Providers>
 					<div className="flex flex-1 flex-col items-center justify-center space-y-2 py-12 md:py-24 lg:py-32">
 						<h1 className="text-[6rem] font-bold leading-none tracking-tight md:text-[12rem] lg:[16rem]">500</h1>
-						<p className="text-center text-neutral-500 text-[3rem]">Error</p>
+						<p className="text-center text-muted-foreground text-[3rem]">Error</p>
 					</div>
 				</Providers>
 			</body>
